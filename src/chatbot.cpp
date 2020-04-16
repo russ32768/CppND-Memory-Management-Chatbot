@@ -45,7 +45,6 @@ ChatBot::ChatBot(ChatBot const &source) {
   std::cout << "ChatBot Copy Constructor" << std::endl;
   // std::cout << "COPYING content of instance " << &source << " to instance "
   //          << this << std::endl;
-  // shallow copy of data handles
   _chatLogic = source._chatLogic;
   _rootNode = source._rootNode;
   _currentNode = source._currentNode;
@@ -55,13 +54,11 @@ ChatBot::ChatBot(ChatBot const &source) {
 ChatBot::ChatBot(ChatBot &&source) noexcept {
   std::cout << "ChatBot Move Constructor" << std::endl;
 
-  // transfering data handles
   _chatLogic = source._chatLogic;
   _rootNode = source._rootNode;
   _currentNode = source._currentNode;
   _image = source._image;
 
-  // releasing data handles
   source._chatLogic = nullptr;
   source._rootNode = nullptr;
   source._currentNode = nullptr;
@@ -75,7 +72,6 @@ ChatBot &ChatBot::operator=(ChatBot const &source) {
     return *this;
   }
 
-  // shallow copy of data handles
   _chatLogic = source._chatLogic;
   _rootNode = source._rootNode;
   _currentNode = source._currentNode;
@@ -91,13 +87,11 @@ ChatBot &ChatBot::operator=(ChatBot &&source) noexcept {
     return *this;
   }
 
-  // transfering data handles
   _chatLogic = source._chatLogic;
   _rootNode = source._rootNode;
   _currentNode = source._currentNode;
   _image = source._image;
 
-  // releasing data handles
   source._chatLogic = nullptr;
   source._rootNode = nullptr;
   source._currentNode = nullptr;
