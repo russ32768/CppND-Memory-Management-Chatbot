@@ -43,8 +43,8 @@ ChatBot::~ChatBot() {
 ////
 ChatBot::ChatBot(ChatBot const &source) {
   std::cout << "ChatBot Copy Constructor" << std::endl;
-  std::cout << "COPYING content of instance " << &source << " to instance "
-            << this << std::endl;
+  // std::cout << "COPYING content of instance " << &source << " to instance "
+  //          << this << std::endl;
   // shallow copy of data handles
   _chatLogic = source._chatLogic;
   _rootNode = source._rootNode;
