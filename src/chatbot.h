@@ -29,6 +29,12 @@ public:
 
     //// STUDENT CODE
     ////
+    ChatBot(ChatBot const& source);                  // copy constructor
+    ChatBot(ChatBot&& source) noexcept ;             // move constructor
+    ChatBot &operator=(ChatBot const& source);       // copy assignment constructor
+    ChatBot &operator=(ChatBot &&source) noexcept ;  // move assignment constructor
+  
+  ChatLogic* GetChatLogicHandle() { return _chatLogic; }
 
     ////
     //// EOF STUDENT CODE
