@@ -21,6 +21,7 @@ private:
 public:
     // constructor / desctructor
     GraphEdge(int id);
+    GraphEdge(GraphEdge &&source) noexcept;  // move constructor
 
     // getter / setter
     int GetID() { return _id; }
